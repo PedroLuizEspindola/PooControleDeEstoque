@@ -5,7 +5,7 @@ frango
 biscoito
 100
 batata
-5
+100
 feijao
 105
 macarrao
@@ -22,3 +22,7 @@ nutella
 200
 sorvete
 130
+tictac
+100
+requeijao
+100

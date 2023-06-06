@@ -11,11 +11,13 @@ import model.Produto;
 public class EstoqueController {
     
     private EstoqueView view;
-    private String ARQUIVO_ESTOQUE = "c:/Temp/ws-eclipse/estoque.txt";
+    private String ARQUIVO_ESTOQUE;
     
+    //construtores do estoquecontroller puxa um nome para ser criado um novo arquivo 
     public EstoqueController(String ARQUIVO_ESTOQUE) {
         this.ARQUIVO_ESTOQUE = ARQUIVO_ESTOQUE;
     } 
+    
     
     public EstoqueController(EstoqueView view) {        
         this.view = view;
@@ -25,13 +27,13 @@ public class EstoqueController {
         Produto produto = new Produto(nomeProduto, quantidade);
         addProduto(nomeProduto,quantidade);
     }
-    
+    //metodo que joga os produtos lidos dentro do arquivo em outro metodo para que escreva uma lista
     public void displayProducts() {
         List<Produto> produtos = getProdutos();
         view.mostrarProdutos(produtos);
     }
     
-    
+    //exibi como o arquivo está escrito
     public void exibirArquivoEstoque() {
         try (BufferedReader reader = new BufferedReader(new FileReader(ARQUIVO_ESTOQUE))) {
             String linha;
@@ -61,6 +63,7 @@ public class EstoqueController {
         
         return produtos;
     }
+    //método de entrada de produtos 
     public void entradaProduto(String produtoNome, int quantidade) {
         List<Produto> produtos = getProdutos();
         boolean found = false;
@@ -91,6 +94,7 @@ public class EstoqueController {
             e.printStackTrace();
         }
     }
+    //método de saida de produtos
     public void saidaProduto(String produtoNome, int quantidade) {
         List<Produto> produtos = getProdutos();
         boolean found = false;
@@ -121,6 +125,7 @@ public class EstoqueController {
             e.printStackTrace();
         }
     }
+    //metodo que adicionam produtos dentro do arquivo/estoque
     public void addProduto(String nomeProduto, int quantidade) {
         try{ 
         	BufferedReader br = new BufferedReader(new FileReader(ARQUIVO_ESTOQUE));

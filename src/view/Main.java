@@ -1,7 +1,7 @@
 package view;
 import controller.EstoqueController;
 import model.Produto;
-import view.EstoqueView;
+
 
 import java.util.List;
 import java.util.Scanner;
@@ -17,8 +17,8 @@ public class Main extends EstoqueView{
             System.out.println("===== Controle de Estoque =====");
             System.out.println("Selecione uma opção:");
             System.out.println("1. Adicionar produto");
-            System.out.println("2. adicione quantidade");
-            System.out.println("3. reduza quantidade");
+            System.out.println("2. Adicione quantidade");
+            System.out.println("3. Reduza quantidade");
             System.out.println("4. Estoque arquivado");
             System.out.println("0. Sair");
 
